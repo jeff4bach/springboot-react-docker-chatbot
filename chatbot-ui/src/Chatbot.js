@@ -17,7 +17,8 @@ const Chatbot = () => {
         setLoading(true);
 
         try {
-            const response = await axios.get('http://localhost:8080/ai/chat/string?message=' + input);
+            //const response = await axios.get('http://localhost:8080/ai/chat/string?message=' + input);
+            const response = await axios.get('http://localhost:8080/ai/chat/string2?message=' + input);
             const aiMessage = { text: response.data, sender: 'ai' };
             setMessages([...messages, newMessage, aiMessage]);
         } catch (error) {
